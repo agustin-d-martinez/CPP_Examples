@@ -1,3 +1,17 @@
+# Directorios de compilación
+/build/
+/out/
+
+# Archivos y directorios generados por CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+_Dependencies/
+
 # Prerequisites
 *.d
 
@@ -30,3 +44,8 @@
 *.exe
 *.out
 *.app
+
+# Archivos de backup y temporales del editor
+*~
+*.swp
+*.tmp
