@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "../Node/Node.h"
+#include "LinkedListIterator.h"
 
 template <typename T>
 class LinkedList
@@ -38,6 +39,18 @@ class LinkedList
 
 	private:
 	Node<T>* getNodeAt( int idx );
+
+	public:
+	using iterator = LinkedListIterator<T>;
+
+	iterator begin(){
+		return iterator(_First_Node);
+	}
+
+	iterator end(){
+		return iterator(_Last_Node);
+	}
+
 };
 
 #include "LinkedList.tpp"

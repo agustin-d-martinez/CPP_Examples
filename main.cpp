@@ -12,7 +12,10 @@ int main(int, char**)
 	lista1 << 20;
 	std::cout << lista1 << std::endl;
 	lista1.remove(3);
-	std::cout << lista1 << std::endl << std::endl;
+
+	for (auto element : lista1 )		// auto iterator. Similar to Python. Element has an the element of the vector.
+		std::cout << element << " ";
+	std::cout << std::endl << std::endl;
 
 	Complex a(13.5 , 24.8);
 	Complex b;
