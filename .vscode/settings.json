@@ -51,6 +51,8 @@
 		"text_encoding": "cpp",
 		"typeinfo": "cpp",
 		"variant": "cpp",
-		"*.tpp": "cpp"
+		"*.tpp": "cpp",
+		"complex": "cpp",
+		"sstream": "cpp"
 	}
 }
