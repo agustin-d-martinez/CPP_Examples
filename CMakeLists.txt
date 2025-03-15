@@ -8,4 +8,3 @@ add_executable(CPP_Examples main.cpp ${LIB_SOURCES} ${TEMPLATE_SOURCES})
 
 include(CTest)
 enable_testing()
-

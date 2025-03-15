@@ -13,6 +13,28 @@
 				"CMAKE_CXX_COMPILER": "E:/msys2/ucrt64/bin/g++.exe",
 				"CMAKE_BUILD_TYPE": "Debug"
 			}
+		},
+		{
+			"name": "Preset_CompuGamer",
+			"displayName": "GCC 14.2.0 x86_64-w64-mingw32 (mingw64)",
+			"description": "Using compilers: C = d:\\msys64\\mingw64\\bin\\gcc.exe, CXX = d:\\msys64\\mingw64\\bin\\g++.exe",
+			"generator": "MinGW Makefiles",
+			"binaryDir": "${sourceDir}/out/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+				"CMAKE_C_COMPILER": "d:/msys64/mingw64/bin/gcc.exe",
+				"CMAKE_CXX_COMPILER": "d:/msys64/mingw64/bin/g++.exe",
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_MAKE_PROGRAM": "d:/msys64/mingw64/bin/mingw32-make.exe"
+			}
+		}
+	],
+	"buildPresets": [
+		{
+			"name": "CPP_Examples",
+			"description": "",
+			"displayName": "",
+			"configurePreset": "Preset_CompuGamer"
 		}
 	]
 }
