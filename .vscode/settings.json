@@ -53,7 +53,9 @@
 		"variant": "cpp",
 		"*.tpp": "cpp",
 		"complex": "cpp",
-		"sstream": "cpp"
+		"sstream": "cpp",
+		"cstring": "cpp",
+		"cinttypes": "cpp"
 	},
 	"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }

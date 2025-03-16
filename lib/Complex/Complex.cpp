@@ -1,33 +1,25 @@
 #include "Complex.h"
+#include "../Punto/Punto.h"
 
-Complex::Complex()	: _real(0) , _img(0) , _module(0) , _angle(0)
-{}
-Complex::Complex(const Complex &a) : _real(a._real) , _img(a._img) , _module(a._module) , _angle(a._angle)
-{}
-Complex::Complex(float real, float img) : _real(real), _img(img)
-{
-	calculateModAngle();
-}
-
-float Complex::Real( void ) const{
+double Complex::Real( void ) const{
 	return _real;
 }
-float Complex::Img( void ) const{
+double Complex::Img( void ) const{
 	return _img;
 }
-float Complex::Module( void ) const{
+double Complex::Module( void ) const{
 	return _module;
 }
-float Complex::Angle( void ) const{
+double Complex::Angle( void ) const{
 	return _angle;
 }
 
-void Complex::Set( float real , float img ){
+void Complex::Set( double real , double img ){
 	_real = real;
 	_img = img;
 	calculateModAngle();
 }
-void Complex::SetPolar( float module , float angle ){
+void Complex::SetPolar( double module , double angle ){
 	_module = module;
 	_angle = angle;
 	calculateRealImg();
@@ -86,9 +78,12 @@ Complex &Complex::operator/=(const Complex &a)
 
 Complex &Complex::operator=(const Complex &a)
 {
-	_real = a._real;
-	_img = a._img;
-	calculateModAngle();
+	if (this != &a)
+	{
+		_real = a._real;
+		_img = a._img;
+		calculateModAngle();
+	}
 	return *this;
 }
 
@@ -114,12 +109,18 @@ std::istream& operator>> ( std::istream& stream , Complex& a){
 	return stream;
 }
 
-
-void Complex::calculateModAngle( void ){
+void Complex::calculateModAngle(void)
+{
 	_module = sqrt(_real * _real + _img * _img);
-	_angle = atan2f(_img , _real);
+	_angle = atan2(_img , _real);
 }
 void Complex::calculateRealImg( void ){
 	_real = _module * cos(_angle);
 	_img = _module * sin(_angle);
 }
+
+Complex::operator Punto(void) const
+{
+	return Punto(_real , _img);
+}
+

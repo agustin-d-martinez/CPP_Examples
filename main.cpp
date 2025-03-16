@@ -1,5 +1,7 @@
 #include <iostream>
 #include "lib/LinkedList/LinkedList.h"
+#include "lib/Punto/Punto.h"
+
 #include "lib/Complex/Complex.h"
 
 int main(int, char**)
@@ -33,6 +35,11 @@ int main(int, char**)
 	a /= b;
 	std::cout << "division a=a/b: " << a << std::endl;
 
-	a.SetPolar(50 , M_PIl);
+	a.SetPolar(50 , M_PI/2);
 	std::cout << "valor a=50 |_PI: " << a << std::endl;
+
+
+	Punto puntito = a;
+
+	std::cout << puntito << std::endl;
 }
