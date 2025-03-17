@@ -1,15 +1,18 @@
 #include "Linea.h"
 
-Linea::Linea(/* args */) : inicio() , fin() {}
+Linea::Linea(/* args */) : inicio() , fin() {x = y = 0;}
 
-Linea::Linea(const Punto& _inicio , const Punto& _fin) : inicio(_inicio) , fin(_fin) {}
+Linea::Linea(const Punto& _inicio , const Punto& _fin) : inicio(_inicio) , fin(_fin) {
+	x = std::min(inicio.x , fin.x);
+	y = std::min(inicio.y , fin.y);
+}
 double Linea::getPendiente( void ){
 	return (inicio.y + fin.y) / (inicio.x - fin.x);
 }
 double Linea::Largo( void ){
 	return sqrt( pow(inicio.x - fin.x, 1) + pow(inicio.y - fin.y, 1));
 }
-void Linea::setOrigen( const Punto& a ){
+void Linea::setInicio( const Punto& a ){
 	inicio = a;
 }
 void Linea::setFinal( const Punto& a){
@@ -18,6 +21,44 @@ void Linea::setFinal( const Punto& a){
 
 bool Linea::operator== (const Linea& a){
 	return (inicio == a.inicio && fin == a.fin);
+}
+
+Linea &Linea::operator=(const Linea &a)
+{
+	if (this != &a)
+	{
+		inicio = a.inicio;
+		fin = a.fin;
+	}
+	return *this;
+}
+
+Linea &Linea::operator+=(const Punto &a)
+{
+	inicio += a;
+	fin += a;
+	return *this;
+}
+
+Linea &Linea::operator-=(const Punto &a)
+{
+	inicio -= a;
+	fin -= a;
+	return *this;
+}
+
+void Linea::Rotate(const double &degree_angle, const Punto &center_rotation)
+{
+	this->operator-=(center_rotation);
+	inicio.Rotate(degree_angle);
+	fin.Rotate(degree_angle);
+	this->operator+=(center_rotation);
+}
+
+void Linea::Rotate(const double &degree_angle)
+{
+	inicio.Rotate(degree_angle);
+	fin.Rotate(degree_angle);
 }
 
 void Linea::Imprimir(Plano &a)
@@ -57,3 +98,18 @@ void Linea::Imprimir(Plano &a)
 	}
 }
 
+Linea operator+(const Linea &a, const Punto &b)
+{
+	Linea aux(a);
+	aux.inicio += b;
+	aux.fin += b;
+	return aux;
+}
+
+Linea operator-(const Linea &a, const Punto &b)
+{
+	Linea aux(a);
+	aux.inicio -= b;
+	aux.fin -= b;
+	return aux;
+}

@@ -6,7 +6,7 @@
 
 class Linea : public Figura
 {
-private:
+protected:
 	Punto inicio , fin ;
 public:
 	Linea();
@@ -14,11 +14,18 @@ public:
 	~Linea(){}
 	double getPendiente( void );
 	double Largo( void );
-	void setOrigen( const Punto& a );
+	void setInicio( const Punto& a );
 	void setFinal( const Punto& a);
+	
+	friend Linea operator+ (const Linea& a , const Punto& b);
+	friend Linea operator- (const Linea& a , const Punto& b);
 
 	bool operator== (const Linea& a);
-
+	Linea& operator= (const Linea& a);
+	Linea& operator+= (const Punto& a);
+	Linea& operator-= (const Punto& a);
+	void Rotate( const double& degree_angle , const Punto& center_rotation );
+	void Rotate( const double& degree_angle );
 	void Imprimir( Plano& a );
 };
 

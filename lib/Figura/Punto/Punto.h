@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#define _USE_MATH_DEFINES
 #include <cmath>
 
 #include "../Figura.h"
@@ -9,10 +10,10 @@ class Complex;		//Forward declaration: Para no hacer un #include circular, decla
 
 class Punto : public Figura{
 	public:
-	double x , y;
+//	double x , y;
 	
 	public:
-	Punto( double _x = 0 , double _y = 0 ) : x(_x) , y(_y) {}
+	Punto( double _x = 0 , double _y = 0 ) {x = _x; y = _y;}
 	
 	~Punto(){}
 
@@ -26,6 +27,8 @@ class Punto : public Figura{
 
 	friend std::ostream& operator<<( std::ostream& stream , const Punto& a );
 	friend std::istream& operator>>( std::istream& stream , Punto& a );
+
+	void Rotate( const double& degree_angle );
 
 	void Imprimir( Plano& a );
 

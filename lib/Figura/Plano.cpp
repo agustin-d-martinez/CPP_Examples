@@ -10,12 +10,12 @@ void Plano::Add(Figura& a){
 void Plano::Set(const int &x, const int &y)
 {
 	if ( y >= 0 && y <= ui.size() && x >= 0 && x <= ui[y].size() )
-		ui[ui.size() - 1 - y][x] = '&';
+		ui[ui.size() - 1 - y][x] = '*';
 }
 void Plano::Set(const double &x, const double &y)
 {
 	if ( y >= 0 && y <= ui.size() && x >= 0 && x <= ui[y].size() )
-		ui[ui.size() -1 -static_cast<int>(y)][static_cast<int>(x)] = '&';
+		ui[ui.size() -1 -static_cast<int>(y)][static_cast<int>(x)] = '*';
 }
 
 void Plano::Update( void ){

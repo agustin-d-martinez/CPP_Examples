@@ -21,6 +21,6 @@ class Circulo : public Forma {
 	void setRadio( const double& _radio );
 	void setPos ( const double& x , const double& y );
 	void setPos ( const Punto& a );
-
+	void Rotate( const double& degree_angle );
 	void Imprimir(Plano& a);
 };

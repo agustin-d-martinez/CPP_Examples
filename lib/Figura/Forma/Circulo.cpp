@@ -1,7 +1,12 @@
 #include "Circulo.h"
 
-Circulo::Circulo(const double& _x , const double& _y , const double& _radio) : centro(_x,_y) , radio(_radio) {}
-Circulo::Circulo(const Punto& a , const double& _radio) : centro(a) , radio(_radio) {}
+Circulo::Circulo(const double& _x , const double& _y , const double& _radio) : centro(_x,_y) , radio(_radio) {
+	x = _x - _radio;
+	y = _y - _radio;}
+Circulo::Circulo(const Punto& a , const double& _radio) : centro(a) , radio(_radio) {
+	x = centro.x - _radio;
+	y = centro.y - _radio;
+}
 
 double Circulo::Area ( void ){
 	return M_PI * radio * radio;
@@ -19,6 +24,11 @@ void Circulo::setPos ( const double& x , const double& y ){
 }
 void Circulo::setPos ( const Punto& a ){
 	centro = a;
+}
+
+void Circulo::Rotate(const double &degree_angle)
+{
+	return;
 }
 
 void Circulo::Imprimir(Plano &a)

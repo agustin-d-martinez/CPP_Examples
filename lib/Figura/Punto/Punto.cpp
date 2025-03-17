@@ -38,7 +38,7 @@ Punto operator- (const Punto& a ,const Punto& b){
 }
 
 std::ostream& operator<<( std::ostream& stream , const Punto& a ){
-	stream << "x: " << a.x << ", y: " << a.y;
+	stream << "(" << a.x << " , " << a.y << ")";
 	return stream;
 }
 
@@ -48,7 +48,18 @@ std::istream& operator>>( std::istream& stream , Punto& a ){
 	return stream;
 }
 
-void Punto::Imprimir( Plano& a ){
+void Punto::Rotate(const double &degree_angle)
+{
+	double aux_cos = cos( M_PI/180 * degree_angle);
+	double aux_sin = sin( M_PI/180 * degree_angle);
+	double aux_x = x;
+
+	x = aux_cos * aux_x - aux_sin * y;
+	y = aux_sin * aux_x + aux_cos * y;
+}
+
+void Punto::Imprimir(Plano &a)
+{
 	a.Set(static_cast<int>(x),static_cast<int>(y));
 }
 

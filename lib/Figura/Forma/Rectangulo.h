@@ -12,4 +12,5 @@ class Rectangulo : public Poligono {
 	double Area( void );
 	double Perimetro( void );
 	void Imprimir(Plano& a );
+	void Rotate ( const double& degree_angle );
 };

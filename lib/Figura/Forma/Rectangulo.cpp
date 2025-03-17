@@ -10,6 +10,9 @@ Rectangulo::Rectangulo(double _largo , double _ancho , double _x , double _y): l
 	lineas.push_back(Linea(punto2 , punto3));
 	lineas.push_back(Linea(punto3 , punto4));
 	lineas.push_back(Linea(punto4 , punto1));
+
+	x = punto1.x;
+	y = punto1.y;
 }
 double Rectangulo::Area( void ){
 	return largo * ancho ;
@@ -22,4 +25,12 @@ void Rectangulo::Imprimir(Plano &a)
 {
 	for (auto& i : lineas)
 		i.Imprimir(a);
+}
+
+void Rectangulo::Rotate(const double &degree_angle)
+{
+	for(auto& i : lineas)
+	{
+		i.Rotate(degree_angle, Punto(x,y));
+	}
 }

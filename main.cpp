@@ -34,17 +34,16 @@ int main(int, char**)
 
 	a.SetPolar(50 , M_PI/2);
 	std::cout << "valor a=50 |_PI: " << a << std::endl << std::endl;
-
-
 	Punto puntito = a;
-
 	std::cout << puntito << std::endl;
 
-	Plano ui(25 , 25);
+	Plano ui(40 , 40);
 
-	Rectangulo cuadradito(15.0 , 5.0 , 2.0 , 1.0);
-	Circulo circulito(Punto(7,7) , 3);
-	Linea recta1(Punto(0,0) , Punto(25,10));
+	Rectangulo cuadradito(15,15,15,0);
+	cuadradito.Rotate(45);
+	Circulo circulito(Punto(15,10) , 5);
+	Linea recta1(Punto(3,0) , Punto(30,27));
+
 	ui.Add(recta1);
 	ui.Add(cuadradito);
 	ui.Add(circulito);
