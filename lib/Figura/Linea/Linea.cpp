@@ -21,8 +21,39 @@ bool Linea::operator== (const Linea& a){
 }
 
 void Linea::Imprimir(Plano &a)
-{
-	double pendiente = getPendiente();
-	for ( double i = inicio.x ; i < fin.x ; i++ )
-		a.Set(i , inicio.x + pendiente * i);
+{	//algoritmo de Bresenham para graficar lineas.
+	int x0 = static_cast<int>(inicio.x);
+	int y0 = static_cast<int>(inicio.y);
+	int x1 = static_cast<int>(fin.x);
+	int y1 = static_cast<int>(fin.y);
+
+	int dx = abs(x1 - x0);
+	int dy = abs(y1 - y0);
+
+	// Dirección del incremento
+	int sx = (x0 < x1) ? 1 : -1;
+	int sy = (y0 < y1) ? 1 : -1;
+
+	// Error
+	int err = dx - dy;
+
+	while (true) {
+		a.Set(x0, y0);
+
+		if (x0 == x1 && y0 == y1)
+			break;
+
+		int e2 = 2 * err;
+		// Si el error doble es mayor que -dy, avanzamos en x
+		if (e2 > -dy) {
+			err -= dy;
+			x0 += sx;
+		}
+		// Si el error doble es menor que dx, avanzamos en y
+		if (e2 < dx) {
+			err += dx;
+			y0 += sy;
+		}
+	}
 }
+

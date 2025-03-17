@@ -49,7 +49,7 @@ std::istream& operator>>( std::istream& stream , Punto& a ){
 }
 
 void Punto::Imprimir( Plano& a ){
-	a.Set(x,y);
+	a.Set(static_cast<int>(x),static_cast<int>(y));
 }
 
 Punto::operator Complex() const

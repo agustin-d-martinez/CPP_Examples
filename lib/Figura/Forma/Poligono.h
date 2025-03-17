@@ -2,12 +2,12 @@
 
 #include <vector>
 #include "Forma.h"
-#include "../Punto/Punto.h"
+#include "../Linea/Linea.h"
 
 class Poligono : public Forma{
 	protected:
 	
-	std::vector<Punto> puntos;
+	std::vector<Linea> lineas;
 
 	public: 
 	Poligono() {}

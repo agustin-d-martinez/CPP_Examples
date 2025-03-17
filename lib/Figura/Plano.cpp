@@ -5,18 +5,18 @@ Plano::Plano (int largo , int ancho ) : ui(largo, std::vector<char>(ancho, ' '))
 
 void Plano::Add(Figura& a){
 	a.Imprimir(*this);
-	formas.push_back(a);
 }
 
 void Plano::Set(const int &x, const int &y)
 {
-	ui[y][x] = '*';
+	if ( y >= 0 && y <= ui.size() && x >= 0 && x <= ui[y].size() )
+		ui[ui.size() - 1 - y][x] = '&';
 }
 void Plano::Set(const double &x, const double &y)
 {
-	ui[static_cast<int>(y)][static_cast<int>(x)] = '*';
+	if ( y >= 0 && y <= ui.size() && x >= 0 && x <= ui[y].size() )
+		ui[ui.size() -1 -static_cast<int>(y)][static_cast<int>(x)] = '&';
 }
-
 
 void Plano::Update( void ){
 	for (auto& y_vector : ui)
@@ -25,4 +25,10 @@ void Plano::Update( void ){
 			std::cout << x;
 		std::cout << std::endl;
 	}
+}
+
+void Plano::Clear(void)
+{
+	for (auto& fila : ui)
+		std::fill(fila.begin(),fila.end(),' ');
 }

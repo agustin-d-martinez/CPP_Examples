@@ -2,10 +2,14 @@
 #include "../Plano.h"
 
 Rectangulo::Rectangulo(double _largo , double _ancho , double _x , double _y): largo(_largo) , ancho(_ancho){
-	puntos.push_back(Punto(_x , _y));
-	puntos.push_back(Punto(_x + ancho , _y));
-	puntos.push_back(Punto(_x , _y + largo));
-	puntos.push_back(Punto(_x + ancho, _y + largo));
+	Punto punto1(_x , _y);
+	Punto punto2(_x + ancho , _y);
+	Punto punto3(_x + ancho, _y + largo);
+	Punto punto4(_x , _y + largo);
+	lineas.push_back(Linea(punto1 , punto2));
+	lineas.push_back(Linea(punto2 , punto3));
+	lineas.push_back(Linea(punto3 , punto4));
+	lineas.push_back(Linea(punto4 , punto1));
 }
 double Rectangulo::Area( void ){
 	return largo * ancho ;
@@ -16,6 +20,6 @@ double Rectangulo::Perimetro( void ){
 
 void Rectangulo::Imprimir(Plano &a)
 {
-	for (auto& punto : puntos)
-		a.Set(punto.x , punto.y);
+	for (auto& i : lineas)
+		i.Imprimir(a);
 }

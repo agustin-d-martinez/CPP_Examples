@@ -20,3 +20,35 @@ void Circulo::setPos ( const double& x , const double& y ){
 void Circulo::setPos ( const Punto& a ){
 	centro = a;
 }
+
+void Circulo::Imprimir(Plano &a)
+{ //Algoritmo del Círculo de Bresenham o algoritmo de punto medio para circuloss
+	int xc = static_cast<int>(centro.x);
+	int yc = static_cast<int>(centro.y);
+	int rad = static_cast<int>(radio);
+	
+	int x = rad;
+	int y = 0;
+	int decision = 1 - x;
+
+	while (y <= x){
+		a.Set(xc + x , yc + y);
+		a.Set(xc - x , yc + y);
+		a.Set(xc + x , yc - y);
+		a.Set(xc - x , yc - y);
+		a.Set(xc + y , yc + x);
+		a.Set(xc - y , yc + x);
+		a.Set(xc + y , yc - x);
+		a.Set(xc - y , yc - x);
+
+		y++;
+		if (decision <= 0){
+			decision += 2*y + 1;
+		}else{
+			x--;
+			decision += 2*(y-x) + 1;
+		}
+
+	}
+
+}

@@ -1,6 +1,8 @@
 #pragma once
-#include "../Punto/Punto.h"
+
+#include <algorithm>
 #include "../Figura.h"
+#include "../Punto/Punto.h"
 
 class Linea : public Figura
 {
