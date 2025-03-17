@@ -1,5 +1,5 @@
 #include "Punto.h"
-#include "../Complex/Complex.h"
+#include "../../Complex/Complex.h"
 
 Punto &Punto::operator+=(const Punto &a)
 {
@@ -46,6 +46,10 @@ std::istream& operator>>( std::istream& stream , Punto& a ){
 	stream >> a.x;
 	stream >> a.y;
 	return stream;
+}
+
+void Punto::Imprimir( Plano& a ){
+	a.Set(x,y);
 }
 
 Punto::operator Complex() const

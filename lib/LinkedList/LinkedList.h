@@ -48,7 +48,7 @@ class LinkedList
 	}
 
 	iterator end(){
-		return iterator(_Last_Node);
+		return iterator(nullptr);
 	}
 
 };

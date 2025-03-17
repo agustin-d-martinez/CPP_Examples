@@ -1,8 +1,11 @@
 #include <iostream>
 #include "lib/LinkedList/LinkedList.h"
-#include "lib/Punto/Punto.h"
+#include "lib/Figura/Punto/Punto.h"
 
 #include "lib/Complex/Complex.h"
+
+#include "lib/Figura/Forma/Rectangulo.h"
+#include "lib/Figura/Plano.h"
 
 int main(int, char**)
 {
@@ -15,7 +18,7 @@ int main(int, char**)
 	std::cout << lista1 << std::endl;
 	lista1.remove(3);
 
-	for (auto element : lista1 )		// auto iterator. Similar to Python. Element has an the element of the vector.
+	for (auto& element : lista1 )		// auto iterator. Similar to Python. Element has an the element of the vector.
 		std::cout << element << " ";
 	std::cout << std::endl << std::endl;
 
@@ -32,14 +35,16 @@ int main(int, char**)
 	a -= b;
 	std::cout << "resta a=a-b: " << a << std::endl;
 
-	a /= b;
-	std::cout << "division a=a/b: " << a << std::endl;
-
 	a.SetPolar(50 , M_PI/2);
-	std::cout << "valor a=50 |_PI: " << a << std::endl;
+	std::cout << "valor a=50 |_PI: " << a << std::endl << std::endl;
 
 
 	Punto puntito = a;
 
 	std::cout << puntito << std::endl;
+
+	Plano ui(15 , 20);
+	Rectangulo cuadrado(10, 10 , 2 , 3);
+	ui.Add(cuadrado);
+	ui.Update();
 }

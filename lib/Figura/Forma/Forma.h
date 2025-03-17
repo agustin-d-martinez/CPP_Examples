@@ -1,6 +1,8 @@
 #pragma once
+#include "../Figura.h"
 
-class Forma{
+
+class Forma : public Figura{
 	public:
 
 	Forma() {}

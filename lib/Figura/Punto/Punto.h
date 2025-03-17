@@ -3,9 +3,11 @@
 #include <iostream>
 #include <cmath>
 
+#include "../Figura.h"
+
 class Complex;		//Forward declaration: Para no hacer un #include circular, declaro a la clase y la defino más adelante.
 
-class Punto{
+class Punto : public Figura{
 	public:
 	double x , y;
 	
@@ -24,6 +26,8 @@ class Punto{
 
 	friend std::ostream& operator<<( std::ostream& stream , const Punto& a );
 	friend std::istream& operator>>( std::istream& stream , Punto& a );
+
+	void Imprimir( Plano& a );
 
 	operator Complex( ) const;	//Permite la conversión de un Punto a un Complex
 };

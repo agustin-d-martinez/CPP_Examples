@@ -19,3 +19,10 @@ void Linea::setFinal( const Punto& a){
 bool Linea::operator== (const Linea& a){
 	return (inicio == a.inicio && fin == a.fin);
 }
+
+void Linea::Imprimir(Plano &a)
+{
+	double pendiente = getPendiente();
+	for ( double i = inicio.x ; i < fin.x ; i++ )
+		a.Set(i , inicio.x + pendiente * i);
+}
