@@ -1,5 +1,5 @@
-#include "Punto.h"
-#include "../../Complex/Complex.h"
+#include "Punto.hpp"
+#include "../../Complex/Complex.hpp"
 
 Punto &Punto::operator+=(const Punto &a)
 {
@@ -13,7 +13,14 @@ Punto& Punto::operator-= (const Punto& a){
 	return *this;
 }
 
-bool Punto::operator==(const Punto &a)
+Punto &Punto::operator*=(double scalar)
+{
+	x *= scalar;
+	y *= scalar;
+	return *this;
+}
+
+bool Punto::operator==(const Punto &a) const
 {
 	return (x == a.x && y == a.y);
 }
@@ -28,11 +35,16 @@ Punto &Punto::operator=(const Punto &a)
 	return *this;
 }
 
-Punto operator+ (const Punto& a ,const Punto& b){
+Punto Punto::operator*(double scalar) const
+{
+	return Punto( x * scalar , y * scalar );
+}
+
+Punto operator+ (const Punto& a ,const Punto& b) {
 	Punto aux(a.x + b.x , a.y + b.y);
 	return aux;
 }
-Punto operator- (const Punto& a ,const Punto& b){
+Punto operator- (const Punto& a ,const Punto& b) {
 	Punto aux(a.x - b.x , a.y - b.y);
 	return aux;
 }
@@ -48,7 +60,7 @@ std::istream& operator>>( std::istream& stream , Punto& a ){
 	return stream;
 }
 
-void Punto::Rotate(const double &degree_angle)
+void Punto::Rotate( double degree_angle)
 {
 	double aux_cos = cos( M_PI/180 * degree_angle);
 	double aux_sin = sin( M_PI/180 * degree_angle);

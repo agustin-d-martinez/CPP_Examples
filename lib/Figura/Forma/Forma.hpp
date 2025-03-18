@@ -1,5 +1,5 @@
 #pragma once
-#include "../Figura.h"
+#include "../Figura.hpp"
 
 
 class Forma : public Figura{

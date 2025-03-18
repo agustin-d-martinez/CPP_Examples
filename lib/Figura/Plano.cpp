@@ -1,5 +1,5 @@
-#include "Plano.h"
-#include "Figura.h"
+#include "Plano.hpp"
+#include "Figura.hpp"
 
 Plano::Plano (int largo , int ancho ) : ui(largo, std::vector<char>(ancho, ' '))  {}
 

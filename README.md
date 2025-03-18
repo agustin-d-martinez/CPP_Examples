@@ -9,6 +9,7 @@ Esta guía posee los pasos para la correcta ejecución de un proyecto de C/C++ u
 	- [Crear Proyecto](#crear-proyecto)
 		- [Agregar Archivos al Proyecto](#agregar-archivos-al-proyecto)
 		- [Utilizar Proyecto en otra PC](#utilizar-proyecto-en-otra-pc)
+- [Proyecto con interfaz Gráfica](#proyecto-con-interfaz-gráfica)
 - [C++ Examples](#c-examples)
 - [Bibliografía](#bibliografía)
 
@@ -117,6 +118,12 @@ Se debe crear un Preset seleccionando **Configure** en el CMakeTools:
 ![alt text](/image1.PNG)
 
 Se sigue desde el [paso 3 de crear proyecto](#crear-proyecto). 
+
+# Proyecto con interfaz Gráfica:
+Para este tipo de proyectos, se debe instalar previamente la GUI a utilizar. Las más comunes para C++ son wxWidgets y QT (siendo que QT posee una aplicación propia para ayudar en el diseño *QT designer*). 
+Aun no encontré una forma de hacer APPs con VSCode por lo que recomiendo dos alternativas:
+- Instalar QTCreator/QTDesing y usar VSCode para editar.
+- Instalar Visual Studio (El violeta, no VSCode).
 
 # C++ Examples
 Implementación de clases básicas utilizando programación orientada a objetos (POO). 

@@ -1,4 +1,4 @@
-#include "Circulo.h"
+#include "Circulo.hpp"
 
 Circulo::Circulo(const double& _x , const double& _y , const double& _radio) : centro(_x,_y) , radio(_radio) {
 	x = _x - _radio;
@@ -26,7 +26,7 @@ void Circulo::setPos ( const Punto& a ){
 	centro = a;
 }
 
-void Circulo::Rotate(const double &degree_angle)
+void Circulo::Rotate( double degree_angle)
 {
 	return;
 }

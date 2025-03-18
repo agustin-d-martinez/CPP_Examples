@@ -1,12 +1,13 @@
 #include <iostream>
-#include "lib/LinkedList/LinkedList.h"
-#include "lib/Figura/Punto/Punto.h"
+#include "lib/LinkedList/LinkedList.hpp"
+#include "lib/Figura/Punto/Punto.hpp"
 
-#include "lib/Complex/Complex.h"
+#include "lib/Complex/Complex.hpp"
 
-#include "lib/Figura/Forma/Rectangulo.h"
-#include "lib/Figura/Plano.h"
-#include "lib/Figura/Forma/Circulo.h"
+#include "lib/Figura/Forma/Rectangulo.hpp"
+#include "lib/Figura/Plano.hpp"
+#include "lib/Figura/Forma/Circulo.hpp"
+
 
 int main(int, char**)
 {
@@ -34,7 +35,7 @@ int main(int, char**)
 
 	a.SetPolar(50 , M_PI/2);
 	std::cout << "valor a=50 |_PI: " << a << std::endl << std::endl;
-	Punto puntito = a;
+	Punto puntito = static_cast<Punto>(a);			//La conversion debe estar explícita por el programador
 	std::cout << puntito << std::endl;
 
 	Plano ui(40 , 40);

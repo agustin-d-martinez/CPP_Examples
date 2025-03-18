@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Poligono.h"
+#include "Poligono.hpp"
 
 class Rectangulo : public Poligono {
 	private:
@@ -12,5 +12,5 @@ class Rectangulo : public Poligono {
 	double Area( void );
 	double Perimetro( void );
 	void Imprimir(Plano& a );
-	void Rotate ( const double& degree_angle );
+	void Rotate ( double degree_angle );
 };

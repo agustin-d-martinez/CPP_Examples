@@ -45,7 +45,7 @@ class Complex{
 	friend std::ostream& operator<< ( std::ostream& stream , const Complex& a);
 	friend std::istream& operator>> ( std::istream& stream , Complex& a);
 
-	operator Punto( void ) const;	//Permite la conversión de un Complex a un Punto 
+	explicit operator Punto( void ) const;	//Permite la conversión de un Complex a un Punto 
 
 	private:
 	void calculateModAngle( void );

@@ -1,8 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include "../Node/Node.h"
-#include "LinkedListIterator.h"
+#include "../Node/Node.hpp"
+#include "LinkedListIterator.hpp"
 
 template <typename T>
 class LinkedList

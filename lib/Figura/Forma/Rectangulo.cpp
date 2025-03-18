@@ -1,5 +1,5 @@
-#include "Rectangulo.h"
-#include "../Plano.h"
+#include "Rectangulo.hpp"
+#include "../Plano.hpp"
 
 Rectangulo::Rectangulo(double _largo , double _ancho , double _x , double _y): largo(_largo) , ancho(_ancho){
 	Punto punto1(_x , _y);
@@ -27,7 +27,7 @@ void Rectangulo::Imprimir(Plano &a)
 		i.Imprimir(a);
 }
 
-void Rectangulo::Rotate(const double &degree_angle)
+void Rectangulo::Rotate( double degree_angle)
 {
 	for(auto& i : lineas)
 	{

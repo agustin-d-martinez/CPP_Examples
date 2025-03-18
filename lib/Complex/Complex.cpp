@@ -1,5 +1,5 @@
-#include "Complex.h"
-#include "../Figura/Punto/Punto.h"
+#include "Complex.hpp"
+#include "../Figura/Punto/Punto.hpp"
 
 double Complex::Real( void ) const{
 	return _real;

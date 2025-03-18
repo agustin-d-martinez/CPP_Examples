@@ -1,4 +1,4 @@
-#include "Linea.h"
+#include "Linea.hpp"
 
 Linea::Linea(/* args */) : inicio() , fin() {x = y = 0;}
 
@@ -6,10 +6,10 @@ Linea::Linea(const Punto& _inicio , const Punto& _fin) : inicio(_inicio) , fin(_
 	x = std::min(inicio.x , fin.x);
 	y = std::min(inicio.y , fin.y);
 }
-double Linea::getPendiente( void ){
+double Linea::getPendiente( void ) const{
 	return (inicio.y + fin.y) / (inicio.x - fin.x);
 }
-double Linea::Largo( void ){
+double Linea::Largo( void ) const{
 	return sqrt( pow(inicio.x - fin.x, 1) + pow(inicio.y - fin.y, 1));
 }
 void Linea::setInicio( const Punto& a ){
@@ -19,7 +19,13 @@ void Linea::setFinal( const Punto& a){
 	fin = a;
 }
 
-bool Linea::operator== (const Linea& a){
+Linea Linea::operator*(double scalar) const
+{
+	return Linea(inicio * scalar  , fin * scalar );
+}
+
+bool Linea::operator==(const Linea &a) const
+{
 	return (inicio == a.inicio && fin == a.fin);
 }
 
@@ -47,7 +53,14 @@ Linea &Linea::operator-=(const Punto &a)
 	return *this;
 }
 
-void Linea::Rotate(const double &degree_angle, const Punto &center_rotation)
+Linea &Linea::operator*=(double scalar)
+{
+	inicio *= scalar;
+	fin *= scalar;
+	return *this;
+}
+
+void Linea::Rotate( double degree_angle, const Punto &center_rotation)
 {
 	this->operator-=(center_rotation);
 	inicio.Rotate(degree_angle);
@@ -55,7 +68,7 @@ void Linea::Rotate(const double &degree_angle, const Punto &center_rotation)
 	this->operator+=(center_rotation);
 }
 
-void Linea::Rotate(const double &degree_angle)
+void Linea::Rotate( double degree_angle)
 {
 	inicio.Rotate(degree_angle);
 	fin.Rotate(degree_angle);

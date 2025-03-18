@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LinkedList.h"
+#include "LinkedList.hpp"
 
 template <typename T>
 LinkedList<T>::LinkedList() : _First_Node(nullptr) , _Last_Node(nullptr)

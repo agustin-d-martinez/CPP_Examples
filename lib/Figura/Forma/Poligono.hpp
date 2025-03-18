@@ -1,8 +1,8 @@
 #pragma once
 
 #include <vector>
-#include "Forma.h"
-#include "../Linea/Linea.h"
+#include "Forma.hpp"
+#include "../Linea/Linea.hpp"
 
 class Poligono : public Forma{
 	protected:

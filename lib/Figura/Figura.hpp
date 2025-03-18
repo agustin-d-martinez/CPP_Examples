@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Plano.h"
+#include "Plano.hpp"
 
 class Figura {
 	public:
@@ -8,6 +8,6 @@ class Figura {
 
 	Figura() {}
 	virtual ~Figura() = default;
-	virtual void Rotate( const double& degree_angle ) = 0;
+	virtual void Rotate( double degree_angle ) = 0;
 	virtual void Imprimir(Plano& a ) = 0;
 };

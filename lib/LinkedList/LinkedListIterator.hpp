@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Node/Node.h"
+#include "../Node/Node.hpp"
 
 template <typename T>
 class LinkedListIterator{
