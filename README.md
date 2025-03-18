@@ -120,7 +120,7 @@ Se debe crear un Preset seleccionando **Configure** en el CMakeTools:
 Se sigue desde el [paso 3 de crear proyecto](#crear-proyecto). 
 
 # Proyecto con interfaz Gráfica:
-Para este tipo de proyectos, se debe instalar previamente la GUI a utilizar. Las más comunes para C++ son wxWidgets y QT (siendo que QT posee una aplicación propia para ayudar en el diseño *QT designer*). 
+Para este tipo de proyectos, se debe instalar previamente la GUI a utilizar. Las más comunes para C++ son wxWidgets, QT y GTK+ (siendo que QT posee una aplicación propia para ayudar en el diseño *QT designer*). 
 Aun no encontré una forma de hacer APPs con VSCode por lo que recomiendo dos alternativas:
 - Instalar QTCreator/QTDesing y usar VSCode para editar.
 - Instalar Visual Studio (El violeta, no VSCode).
